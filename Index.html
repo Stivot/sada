@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía: Desarrollo de Software</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #2ecc71;
+            --warning: #f39c12;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .infographic-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .infographic-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        .infographic-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 15px;
+            border-radius: 8px 8px 0 0;
+            margin: -20px -20px 20px -20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .card-header i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+        
+        h1 {
+            text-align: center;
+            color: var(--primary);
+            margin: 30px 0;
+            font-size: 2.5rem;
+            border-bottom: 3px solid var(--secondary);
+            padding-bottom: 15px;
+        }
+        
+        h2 {
+            color: var(--secondary);
+            margin: 15px 0;
+            font-size: 1.5rem;
+        }
+        
+        h3 {
+            color: var(--primary);
+            margin: 10px 0;
+            font-size: 1.2rem;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        ul, ol {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight {
+            background-color: rgba(52, 152, 219, 0.1);
+            border-left: 4px solid var(--secondary);
+            padding: 10px 15px;
+            margin: 15px 0;
+            font-style: italic;
+        }
+        
+        .badge {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin: 5px 5px 5px 0;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            margin: 20px 0;
+        }
+        
+        .timeline-item {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--secondary);
+        }
+        
+        .timeline-item:after {
+            content: '';
+            position: absolute;
+            left: -15px;
+            top: 17px;
+            bottom: -23px;
+            width: 2px;
+            background-color: var(--secondary);
+        }
+        
+        .timeline-item:last-child:after {
+            display: none;
+        }
+        
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        .color-primary { color: var(--primary); }
+        .color-secondary { color: var(--secondary); }
+        .color-accent { color: var(--accent); }
+        
+        @media (max-width: 768px) {
+            .infographic-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <h1>Desarrollo de Software: Temas Clave y Mejores Prácticas</h1>
+    
+    <div class="infographic-container">
+        <!-- Introducción -->
+        <div class="infographic-card">
+            <div class="card-header">
+                <i class="fas fa-code"></i>
+                <h2>Introducción</h2>
+            </div>
+            <p>El desarrollo de software es un conjunto de actividades informáticas dedicadas a la creación, diseño, implementación y soporte de software.</p>
+            
+            <div class="highlight">
+                "El establecimiento y uso de principios de ingeniería robustos, orientados a obtener económicamente software que sea fiable y funcione eficientemente sobre máquinas reales" - F. Bauer (1969)
+            </div>
+            
+            <h3>Evolución de la disciplina</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h4>1960-1980</h4>
+                    <p>"Crisis del software": proyectos excedieron presupuestos, plazos y causaron daños debido a defectos</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>Años 80</h4>
+                    <p>Surgió como profesión, destacando la necesidad de "calidad" en el software</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tipos de Software -->
+        <div class="infographic-card">
+            <div class="card-header">
+                <i class="fas fa-list"></i>
+                <h2>Tipos de Software</h2>
+            </div>
+            
+            <div class="grid-2">
+                <div>
+                    <h3><i class="fas fa-cog color-primary"></i> Sistema</h3>
+                    <p>Funciones básicas: sistemas operativos, gestión de discos y hardware</p>
+                </div>
+                
+                <div>
+                    <h3><i class="fas fa-laptop-code color-secondary"></i> Programación</h3>
+                    <p>Herramientas para programadores: editores, compiladores, depuradores</p>
+                </div>
+                
+                <div>
+                    <h3><i class="fas fa-mobile-alt color-accent"></i> Aplicación</h3>
+                    <p>Ayuda a usuarios en tareas específicas: oficina, multimedia, web, móviles</p>
+                </div>
+                
+                <div>
+                    <h3><i class="fas fa-microchip"></i> Embebido</h3>
+                    <p>Controla máquinas y dispositivos no tradicionales (IoT, redes, robots)</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Roles en Desarrollo -->
+        <div class="infographic-card">
+            <div class="card-header">
+                <i class="fas fa-users"></i>
+                <h2>Roles Principales</h2>
+            </div>
+            
+            <h3><span class="badge">1</span> Programadores</h3>
+            <p>Escriben código fuente para que las computadoras realicen tareas específicas</p>
+            
+            <h3><span class="badge">2</span> Ingenieros de Software</h3>
+            <p>Aplican principios de ingeniería para crear soluciones que resuelvan problemas de manera generalizada</p>
+            
+            <h3><span class="badge">3</span> Desarrolladores de Software</h3>
+            <p>Dirigen el ciclo de vida completo del desarrollo, colaborando con equipos funcionales</p>
+            
+            <div class="highlight">
+                Importante distinguir entre software a medida (para usuarios específicos) y COTS (Commercial Off-The-Shelf)
+            </div>
+        </div>
+        
+        <!-- Metodologías -->
+        <div class="infographic-card">
+            <div class="card-header">
+                <i class="fas fa-project-diagram"></i>
+                <h2>Metodologías de Desarrollo</h2>
+            </div>
+            
+            <h3><i class="fas fa-sync-alt color-secondary"></i> Metodologías Ágiles</h3>
+            <p>Colaboración, entrega incremental y adaptación continua. Permiten responder con flexibilidad a cambios.</p>
+            <ul>
+                <li>Scrum</li>
+                <li>Kanban</li>
+                <li>Extreme Programming (XP)</li>
+            </ul>
+            
+            <div class="highlight">
+                Martin Fowler advierte sobre los "falsos-ágiles" que solo adoptan el nombre sin seguir los principios del Manifiesto Ágil
+            </div>
+            
+            <h3><i class="fas fa-water color-primary"></i> Modelo Cascada</h3>
+            <p>Secuencia lineal: requisitos → diseño → desarrollo → pruebas → implementación → mantenimiento</p>
+            <p>Ideal para proyectos con requisitos estables y bien definidos desde el inicio</p>
+            
+            <h3><i class="fas fa-cog"></i> SDLC (Ciclo de Vida)</h3>
+            <p>Elección crucial basada en alcance, complejidad, plazos, recursos y grado de incertidumbre</p>
+        </div>
+        
+        <!-- Fases del Desarrollo -->
+        <div class="infographic-card">
+            <div class="card-header">
+                <i class="fas fa-tasks"></i>
+                <h2>Fases del Desarrollo</h2>
+            </div>
+            
+            <ol>
+                <li>Selección de metodología</li>
+                <li>Recopilación de requisitos</li>
+                <li>Elección/construcción de arquitectura</li>
+                <li>Desarrollo de diseño</li>
+                <li>Creación de modelos (UML, SysML)</li>
+                <li>Construcción de código</li>
+                <li>Pruebas</li>
+                <li>Gestión de configuración y defectos</li>
+                <li>Implementación</li>
+                <li>Migración de datos (si es necesario)</li>
+                <li>Gestión y medición del proyecto</li>
+            </ol>
+            
+            <p>Estas fases se agrupan en: análisis, diseño, pruebas, implementación, mantenimiento</p>
+        </div>
+        
+        <!-- Excelencia Técnica -->
+        <div class="infographic-card">
+            <div class="card-header">
+                <i class="fas fa-medal"></i>
+                <h2>Excelencia Técnica</h2>
+            </div>
+            
+            <h3><i class="fas fa-drafting-compass color-primary"></i> Diseño Sólido</h3>
+            <p>Crear software sostenible, escalable y fácil de mantener. Incluye diseño centrado en usuario (UX) y diseño modular.</p>
+            
+            <h3><i class="fas fa-file-code color-secondary"></i> Estándares de Codificación</h3>
+            <ul>
+                <li>Convenciones de nomenclatura coherentes</li>
+                <li>Comentarios claros y útiles</li>
+                <li>Estructuras limpias y legibles</li>
+                <li>Control de versiones con buenas prácticas</li>
+                <li>Revisión de código en equipo</li>
+            </ul>
+            
+            <div class="highlight">
+                "Code Complete" de Steve McConnell: compendio de técnicas de construcción de software, enfatizando la artesanía del software
+            </div>
+            
+            <h3><i class="fas fa-tools"></i> Selección de Tecnología</h3>
+            <p>Frameworks, lenguajes, bases de datos. Basada en objetivos, escalabilidad, experiencia del equipo y comunidad.</p>
+            
+            <h3><i class="fas fa-vial color-accent"></i> Pruebas Rigurosas</h3>
+            <p>Unitarias, integración, funcionales, automatizadas, rendimiento y seguridad.</p>
+            
+            <h3><i class="fas fa-code-branch"></i> CI/CD</h3>
+            <p>Integración Continua e Implementación Continua para entregas rápidas, confiables y sostenibles.</p>
+        </div>
+    </div>
+    
+    <div class="infographic-container">
+        <!-- Normas y Estándares -->
+        <div class="infographic-card">
+            <div class="card-header">
+                <i class="fas fa-certificate"></i>
+                <h2>Normas y Estándares</h2>
+            </div>
+            
+            <h3><i class="fas fa-file-alt color-primary"></i> ISO/IEC</h3>
+            <ul>
+                <li><strong>12207</strong>: Modelos de Ciclos de Vida del Software</li>
+                <li><strong>9126</strong>: Evaluación de Productos de Software</li>
+                <li><strong>14598</strong>: Evaluación de Productos de Software</li>
+                <li><strong>25000</strong>: SQuaRE - Calidad y Evaluación</li>
+            </ul>
+            
+            <h3><i class="fas fa-chart-line color-secondary"></i> Otros Estándares</h3>
+            <ul>
+                <li>SPICE - Evaluación de procesos de software</li>
+                <li>CMMI - Modelo de mejora de procesos (5 niveles de madurez)</li>
+                <li>IEEE - Estándares técnicos</li>
+                <li>PSP - Proceso de Software Personal</li>
+                <li>TSP - Proceso de Software en Equipo</li>
+                <li>Moprosoft - Norma mexicana para pymes</li>
+            </ul>
+        </div>
+        
+        <!-- Figuras Influyentes -->
+        <div class="infographic-card">
+            <div class="card-header">
+                <i class="fas fa-user-graduate"></i>
+                <h2>Figuras Influyentes</h2>
+            </div>
+            
+            <h3><i class="fas fa-user color-primary"></i> Margaret Hamilton</h3>
+            <p>Acuñó el término "ingeniería de software" durante el programa Apolo</p>
+            
+            <h3><i class="fas fa-user color-secondary"></i> Fred Brooks</h3>
+            <p>Conocido por "No hay balas de plata" (1986), argumentando que ninguna tecnología individual lograría una mejora de 10 veces en productividad</p>
+            
+            <h3><i class="fas fa-user color-accent"></i> Steve McConnell</h3>
+            <p>Autor de "Code Complete", promueve la superación del modelo "code-and-fix"</p>
+            
+            <h3><i class="fas fa-user"></i> Grady Booch</h3>
+            <p>Co-desarrollador del UML, énfasis en añadir clases para simplificar códigos complejos</p>
+            
+            <h3><i class="fas fa-user"></i> Martin Fowler</h3>
+            <p>Crítico de la "falso-agilidad", defensor de los principios originales del Manifiesto Ágil</p>
+            
+            <p>Otros: Charles Bachman, Laszlo Belady, Peter Chen, Edsger Dijkstra, David Parnas, Michael A. Jackson</p>
+        </div>
+        
+        <!-- Tendencias Actuales -->
+        <div class="infographic-card">
+            <div class="card-header">
+                <i class="fas fa-rocket"></i>
+                <h2>Tendencias Actuales</h2>
+            </div>
+            
+            <div class="grid-2">
+                <div>
+                    <span class="badge">Aspectos</span>
+                    <p>Manejo de atributos de calidad y código repetitivo</p>
+                </div>
+                
+                <div>
+                    <span class="badge">Ágil</span>
+                    <p>Guía proyectos con expectativas cambiantes</p>
+                </div>
+                
+                <div>
+                    <span class="badge">Experimental</span>
+                    <p>Elaboración de experimentos y recolección de datos</p>
+                </div>
+                
+                <div>
+                    <span class="badge">Model-driven</span>
+                    <p>Desarrollo con modelos textuales y gráficos</p>
+                </div>
+                
+                <div>
+                    <span class="badge">Líneas de productos</span>
+                    <p>Producción sistemática de familias de sistemas</p>
+                </div>
+                
+                <div>
+                    <span class="badge">IA</span>
+                    <p>Programas que emulan toma de decisiones humana</p>
+                </div>
+                
+                <div>
+                    <span class="badge">Nube</span>
+                    <p>Desarrollo nativo y basado en la nube</p>
+                </div>
+                
+                <div>
+                    <span class="badge">Blockchain</span>
+                    <p>Transformación con libros de contabilidad seguros</p>
+                </div>
+                
+                <div>
+                    <span class="badge">Low code</span>
+                    <p>Reduce necesidad de codificación</p>
+                </div>
+                
+                <div>
+                    <span class="badge">Análisis</span>
+                    <p>Integración de capacidades avanzadas de análisis</p>
+                </div>
+                
+                <div>
+                    <span class="badge">MBSE</span>
+                    <p>Ingeniería de Sistemas Basada en Modelos</p>
+                </div>
+                
+                <div>
+                    <span class="badge">Móvil</span>
+                    <p>Aplicaciones con conexiones profundas a datos</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Conclusión -->
+    <div class="infographic-card" style="margin-top: 30px;">
+        <div class="card-header">
+            <i class="fas fa-check-circle"></i>
+            <h2>Conclusión</h2>
+        </div>
+        
+        <p>El desarrollo de software es una disciplina madura pero en constante evolución, donde la aplicación de mejores prácticas ya no es una opción, sino una <strong>necesidad estratégica</strong>.</p>
+        
+        <div class="highlight">
+            Desde metodologías ágiles hasta CI/CD, cada decisión debe alinearse con la calidad, la eficiencia y la capacidad de adaptación al cambio.
+        </div>
+        
+        <p>La comprensión de las complejidades del diseño de sistemas y arquitectura, junto con la aplicación de normas y estándares de calidad, son fundamentales para entregar productos seguros, escalables y orientados a las necesidades reales del cliente.</p>
+    </div>
+
+</body>
+</html>
